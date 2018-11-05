@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="lista_tarefasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_tarefas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ds_titulo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fg_finalizado" Type="bit" Nullable="false" />
+          <Property Name="ds_descricao" Type="nvarchar(max)" />
+          <Property Name="dt_criado" Type="date" />
+          <Property Name="dt_editado" Type="date" />
+          <Property Name="dt_deletado" Type="date" />
+          <Property Name="dt_concluido" Type="date" />
+        </EntityType>
+        <EntityContainer Name="lista_tarefasModelStoreContainer">
+          <EntitySet Name="tb_tarefas" EntityType="Self.tb_tarefas" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="lista_tarefasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_tarefas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ds_titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fg_finalizado" Type="Boolean" Nullable="false" />
+          <Property Name="ds_descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dt_criado" Type="DateTime" Precision="0" />
+          <Property Name="dt_editado" Type="DateTime" Precision="0" />
+          <Property Name="dt_deletado" Type="DateTime" Precision="0" />
+          <Property Name="dt_concluido" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="lista_tarefasEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_tarefas" EntityType="Self.tb_tarefas" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="lista_tarefasModelStoreContainer" CdmEntityContainer="lista_tarefasEntities">
+          <EntitySetMapping Name="tb_tarefas">
+            <EntityTypeMapping TypeName="lista_tarefasModel.tb_tarefas">
+              <MappingFragment StoreEntitySet="tb_tarefas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ds_titulo" ColumnName="ds_titulo" />
+                <ScalarProperty Name="fg_finalizado" ColumnName="fg_finalizado" />
+                <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
+                <ScalarProperty Name="dt_criado" ColumnName="dt_criado" />
+                <ScalarProperty Name="dt_editado" ColumnName="dt_editado" />
+                <ScalarProperty Name="dt_deletado" ColumnName="dt_deletado" />
+                <ScalarProperty Name="dt_concluido" ColumnName="dt_concluido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

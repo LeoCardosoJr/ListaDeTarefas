@@ -1,0 +1,19 @@
+﻿*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.alertCss {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.btnAdd {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    color: #24542f;
+    cursor: pointer;
+}
